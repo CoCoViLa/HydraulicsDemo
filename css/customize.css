@@ -1,0 +1,112 @@
+body{
+	margin-top:80px;
+	}
+	
+	.anchor{/*new anchor place to handle header height*/
+	display: block;
+	height: 72px;
+	margin-top: -72px;
+	visibility: hidden;
+}
+
+	
+	.navbar-nav {
+		font-size:1.3em;
+	}
+	
+	
+.navbar-brand {
+  float: left;
+  padding: 0px 15px 2px 15px;
+  height: 60px;
+}
+
+.navbar-nav > li > a:hover{
+	text-decoration:underline;
+}
+ #body-about #menu-about a,
+ #body-developers #menu-developers a,
+  #body-packages #menu-packages a,
+   #body-documentation #menu-documentation a
+ {
+  color: #000000;
+}
+	
+	.list-font{
+		font-size:1.4em;
+	}
+	
+	.lead{
+		font-size:1.3em;
+	}
+	
+	.green{
+	/*	color:#0fcf46;*/
+	color:#98cf0f;
+			font-size:1.4em;
+	}
+	
+	.jumbotron h1{
+		font-size:2.3em;
+	}
+	.jumbotron .colored{
+	color:white;	
+	text-decoration: underline;
+	}
+	.footer{
+		border-top:2px solid #22b4ef;
+	margin-top:70px;
+		background:#0F98CF;
+		color:white;
+	}
+	
+	.footer a{
+			color:white;
+	}
+	
+	.footer ul{
+	list-style:none;	
+	margin-top: 5px;
+				margin-left:-40px;
+
+	}
+	.footer .list-heading{
+border-bottom:1px solid #22b4ef;
+			margin-top:10px;
+
+	}
+	
+	.footer p{
+			margin-top: 5px;
+
+	}
+	
+	 /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+      margin: 20px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }

@@ -19,7 +19,7 @@
  	     <code> finalset</code> – set of variables in loop, computed using iterations.</p>
 <p>To solve computational problem <code>initset -> finalset</code>, the subtask <code>primset -> secondset</code> for recomputing split variables must be solved. The synthesized function <code>primset -> secondset</code> is passed as an argument to the method iterator and this method can iteratively call the synthesized function to calculate <code>finalset</code>. </p>
 <p>The method is illustrated in the following example.</p>
- <img  src="img/PieceOfScheme.png" width="550px" class="center-block">
+ <img  src="img/PieceOfScheme.png" width="550" class="center-block" alt="PieceOfScheme.png"
  
 <p> In this fragment two loop dependencies V<code>P.Q1 -> ResG.Q2 -> ResG.p2e -> VP.p1 -> VP.Q1 and  VP.Q2 -> ResH.Q1 -> ResH.p1e -> VP.p2 -> VP.Q2 </code>take place. The loop dependencies can be solved if variables ResG.p2e and ResH.p1e are split and calculated using built-in iteration method. 
 State variables and split variables must be described in component models. When building a particular simulation task model and performing simulations state variables and split variables are used automatically.</p>

@@ -8,7 +8,7 @@
 <p><code>dyn_stat_Source</code>  is used for setting different values for those parameters of <code>dynamic Source</code>, which are defined as ports on the side edges of the <code>dynamic Source</code> image box. So it enables <code>dynamic Source</code> to generate signals of different values as input disturbances. The feature is used weather for computing 3D output data or for computing multiple 2D output graphs for different values of some parameters.</p>
 <p>Number of different values is determined by parameter Y_steps  set in <code>Simulation process manager</code>.  If<code> dyn_stat_Source</code> is used for setting parameter for dynamic_Source, then the corresponding parameter must be devaluated directly in dynamic Source properties.</p>
 
- <img  src="img/Sources_1.png" width="550px" class="center-block">
+ <img  src="img/Sources_1.png" alt="Sources_1.png" width="550" class="center-block">
  
 <p>Properties for constant Source:</p>
 <ul><li>	mean - constant value of the signal</li></ul>
@@ -21,9 +21,9 @@ the variable type_ ... "true" (only one type_ ... must be set  "true")</p>
 	<ul><li><strong>For  type_ste = true:</strong>
 	<ul>	mean - constant value of the signal
 		step - height of the step
-		tmin - for  t < tmin,  ramp function applies</ul></li>
+		tmin - for  t  &lt; tmin,  ramp function applies</ul></li>
 <li>	<strong>For  type_jum = true:</strong>
-		<ul><li>height  -  step height ( for t < tmin and (tmin+dtjum)&lt;t&lt;(2*tmin+dtjum)ramp function applies)   </li>
+		<ul><li>height  -  step height ( for t  &lt; tmin and (tmin+dtjum)&lt;t&lt;(2*tmin+dtjum)ramp function applies)   </li>
 		<li>dtjum  -  duration of jump, s</li></ul></li>
 <li><strong>	For  type_osc = true:</strong>
 		<ul><li>omega   -  frequency,  rad/s   </li>

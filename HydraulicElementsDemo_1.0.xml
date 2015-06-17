@@ -1,0 +1,1138 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<!DOCTYPE package SYSTEM "package2.dtd">
+<package>
+<name>HydraulicElementsDemo_1.0</name>
+<description>Hydraulic_elements_demo</description>
+
+
+<class type="class">
+	<name>Process_dynamic_3D</name>
+	<description>Engine for 3D dynamic process</description>
+	<icon>Process_dynamic_3D.gif</icon>
+<graphics>
+<bounds x="0" y="0" width="105" height="60"/>
+<rect x="0" y="0" width="105" height="60" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<text string="dynamic" colour="-16777216" x="18" y="18" fontname="Arial" fontstyle="0" fontsize="20" transparency="255"/>
+<text string="Process" colour="-16777216" x="16" y="36" fontname="Bitstream Charter" fontstyle="1" fontsize="20" transparency="255"/>
+<text string="3 D" colour="-16777216" x="37" y="57" fontname="Bitstream Charter" fontstyle="1" fontsize="20" transparency="255"/>
+</graphics>
+	<fields>
+		<field name="X_steps" type="double"/>
+		<field name="Y_steps" type="double"/>
+		<field name="dyn_stat_steps" type="double"/>
+		<field name="tau" type="double" />
+		<field name="epsapi" type="double" value="0.001" />
+		<field name="epsri" type="double" value="0.001" />
+		<field name="numofcomps" type="double" value="2" />
+		<field name="maxiter" type="double" value="25" />
+		<field name="adjust" type="double" value="0.8" />
+		<field name="fluid_type" type="String" value="HLP46" />
+		<field name="fluid_temp" type="double" value="40" />
+		<field name="fluid_vol" type="double" value="0.02" />
+		<field name="fluid_ka" type="double" value="1" />					
+		<field name="gr_red_rate" type="double" value="1" />					
+		<field name="delAllGraphs" type="boolean" value="false" />					
+	</fields>
+</class>
+
+
+<class type="class">
+	<name>Source_dyn_stat</name>
+	<description>Input disturbance signal</description>
+	<icon>Source_dyn_stat.gif</icon>
+<graphics>
+<bounds x="0" y="0" width="90" height="90"/>
+<rect x="7" y="6" width="75" height="75" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<rect x="8" y="7" width="73" height="73" colour="-50" filled="true" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<text string="dyn_stat" colour="-16777216" x="12" y="54" fontname="Arial" fontstyle="0" fontsize="17" transparency="255"/>
+<line x1="21" y1="33" x2="42" y2="33" colour="-16777216" fixed="false" stroke="3" linetype="0.0" transparency="255"/>
+<line x1="43" y1="33" x2="43" y2="18" colour="-16777216" fixed="false" stroke="3" linetype="0.0" transparency="255"/>
+<line x1="43" y1="18" x2="68" y2="18" colour="-16777216" fixed="false" stroke="3" linetype="0.0" transparency="255"/>
+<text string="Source" colour="-16777216" x="11" y="75" fontname="Arial" fontstyle="1" fontsize="20" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="out" type="double" x="44" y="6" portConnection="" strict="true" />
+	</ports>
+	<fields>
+		<field name="init_val" type="double" />
+		<field name="final_val" type="double" />
+	</fields>
+</class>
+
+
+<class type="class">
+	<name>Source_dyn</name>
+	<description>Input disturbance signal</description>
+	<icon>Source_dyn.gif</icon>
+<graphics>
+<bounds x="0" y="0" width="90" height="90"/>
+<rect x="7" y="6" width="75" height="75" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<rect x="8" y="7" width="73" height="73" colour="-50" filled="true" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<text string="" colour="-16777216" x="22" y="54" fontname="Arial" fontstyle="0" fontsize="17" transparency="255"/>
+<line x1="22" y1="33" x2="42" y2="33" colour="-16777216" fixed="false" stroke="3" linetype="0.0" transparency="255"/>
+<line x1="44" y1="33" x2="44" y2="23" colour="-16777216" fixed="false" stroke="3" linetype="0.0" transparency="255"/>
+<line x1="44" y1="20" x2="69" y2="20" colour="-16777216" fixed="false" stroke="3" linetype="0.0" transparency="255"/>
+<text string="Source" colour="-16777216" x="13" y="72" fontname="Arial" fontstyle="1" fontsize="18" transparency="255"/>
+<text string="" colour="-16777216" x="21" y="76" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="dynamic" colour="-16777216" x="13" y="52" fontname="Arial" fontstyle="0" fontsize="16" transparency="255"/>
+<text string="mean" colour="-16777216" x="-29" y="16" fontname="Arial" fontstyle="0" fontsize="12" transparency="255"/>
+<text string="step" colour="-16777216" x="-22" y="39" fontname="Arial" fontstyle="0" fontsize="12" transparency="255"/>
+<text string="height" colour="-16777216" x="-32" y="62" fontname="Arial" fontstyle="0" fontsize="12" transparency="255"/>
+<text string="omega" colour="-16777216" x="88" y="16" fontname="Arial" fontstyle="0" fontsize="12" transparency="255"/>
+<text string="ampl" colour="-16777216" x="88" y="39" fontname="Arial" fontstyle="0" fontsize="12" transparency="255"/>
+<text string="slope" colour="-16777216" x="88" y="62" fontname="Arial" fontstyle="0" fontsize="12" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="out" type="double" x="44" y="6" portConnection="" strict="true" />
+		<port name="in" type="double" x="44" y="81" portConnection="" strict="true" />					
+		<port name="mean" type="double" x="7" y="20" portConnection="" strict="true" />
+		<port name="step" type="double" x="7" y="43" portConnection="" strict="true" />
+		<port name="height" type="double" x="7" y="66" portConnection="" strict="true" />
+		<port name="omega" type="double" x="82" y="20" portConnection="" strict="true" />
+		<port name="ampl" type="double" x="82" y="43" portConnection="" strict="true" />
+		<port name="slope" type="double" x="82" y="66" portConnection="" strict="true" />
+	</ports>
+	<fields>	
+		<field name="type_con" type="boolean"/>
+		<field name="type_ste" type="boolean"/>
+		<field name="type_jum" type="boolean"/>
+		<field name="type_osc" type="boolean"/>
+		<field name="type_ram" type="boolean"/>							
+		<field name="mean" type="double"/>
+		<field name="step" type="double"/>
+		<field name="tmin" type="double"/>
+		<field name="slope" type="double"/>
+		<field name="height" type="double"/>
+		<field name="dtjum" type="double"/>		
+		<field name="omega" type="double"/>
+		<field name="fi" type="double"/>
+		<field name="ampl" type="double"/>
+		<field name="maxampl" type="double"/>
+	</fields>
+</class>
+
+
+<class type="class">
+	<name>Source_con</name>
+	<description>Constant input disturbance signal</description>
+	<icon>Source_con.gif</icon>
+<graphics>
+<bounds x="0" y="0" width="90" height="90"/>
+<rect x="7" y="6" width="75" height="75" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<rect x="8" y="7" width="73" height="73" colour="-50" filled="true" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<text string="" colour="-16777216" x="22" y="54" fontname="Arial" fontstyle="0" fontsize="17" transparency="255"/>
+<line x1="21" y1="33" x2="42" y2="33" colour="-16777216" fixed="false" stroke="3" linetype="0.0" transparency="255"/>
+<line x1="43" y1="33" x2="43" y2="18" colour="-16777216" fixed="false" stroke="3" linetype="0.0" transparency="255"/>
+<line x1="43" y1="18" x2="68" y2="18" colour="-16777216" fixed="false" stroke="3" linetype="0.0" transparency="255"/>
+<text string="Source" colour="-16777216" x="11" y="74" fontname="Arial" fontstyle="1" fontsize="20" transparency="255"/>
+<text string="constant" colour="-16777216" x="12" y="53" fontname="Arial" fontstyle="0" fontsize="17" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="out" type="double" x="44" y="6" portConnection="" strict="true" />
+	</ports>
+	<fields>
+		<field name="mean" type="double" value="0" />
+	</fields>
+</class>
+
+
+<class type="class">
+	<name>Clock</name>
+	<description>Clock</description>
+	<icon>clock.gif</icon>
+<graphics>
+<bounds x="0" y="0" width="98" height="103"/>
+<oval x="20" y="21" width="59" height="58" colour="-16777216" filled="false" fixed="false" stroke="2" linetype="0.0" transparency="255"/>
+<line x1="50" y1="79" x2="50" y2="71" colour="-16777216" fixed="false" stroke="2" linetype="0.0" transparency="255"/>
+<line x1="20" y1="50" x2="28" y2="50" colour="-16777216" fixed="false" stroke="2" linetype="0.0" transparency="255"/>
+<line x1="79" y1="51" x2="71" y2="51" colour="-16777216" fixed="false" stroke="2" linetype="0.0" transparency="255"/>
+<oval x="45" y="46" width="10" height="9" colour="-16777216" filled="true" fixed="false" stroke="2" linetype="0.0" transparency="255"/>
+<line x1="49" y1="50" x2="44" y2="35" colour="-16777216" fixed="false" stroke="4" linetype="0.0" transparency="255"/>
+<line x1="49" y1="51" x2="37" y2="72" colour="-16777216" fixed="false" stroke="3" linetype="0.0" transparency="255"/>
+<line x1="50" y1="21" x2="50" y2="28" colour="-16777216" fixed="false" stroke="2" linetype="0.0" transparency="255"/>
+<rect x="5" y="6" width="88" height="89" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<oval x="24" y="90" width="0" height="0" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<oval x="121" y="109" width="0" height="0" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<oval x="76" y="98" width="0" height="0" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<oval x="132" y="81" width="0" height="0" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="out" type="double" x="50" y="6" portConnection="" strict="true" />
+	</ports>
+</class>
+
+
+<class type="class">
+	<name>MsGr</name>
+	<description>Multi Series Graph</description>
+	<icon>MultiSeriesGraph.gif</icon>
+<graphics>
+	<bounds x="0" y="0" width="119" height="112"/>
+	<line x1="7" y1="12" x2="7" y2="87" colour="-16777216" fixed="false" stroke="2" linetype="0" transparency="255"/>
+	<line x1="1" y1="83" x2="83" y2="83" colour="-16777216" fixed="false" stroke="2" linetype="0" transparency="255"/>		
+	<line x1="7" y1="12" x2="4" y2="20" colour="-16777216" fixed="false" stroke="2" linetype="0" transparency="255"/>
+	<line x1="7" y1="12" x2="10" y2="20" colour="-16777216" fixed="false" stroke="2" linetype="0" transparency="255"/>
+	<line x1="83" y1="83" x2="77" y2="86" colour="-16777216" fixed="false" stroke="2" linetype="0" transparency="255"/>
+	<line x1="83" y1="83" x2="77" y2="80" colour="-16777216" fixed="false" stroke="2" linetype="0" transparency="255"/>
+	<text string="x" colour="16777216" x="86" y="95" fontname="Arial" fontstyle="1" fontsize="13" transparency="255"/>
+	<text string="y" colour="16777216" x="12" y="11" fontname="Arial" fontstyle="1" fontsize="13" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="ys" type="double[]" multi="true" x="7" y="49" portConnection="" strict="false" />
+		<port name="x" type="double" x="43" y="83" portConnection="" strict="false" />
+	</ports>
+	<fields>
+		<field name="domainName" type="String" />
+		<field name="seriesNames" type="String[]" />
+		<field name="repaintImmediately" type="boolean"/>
+		<field name="lineThickness" type="float"/>
+		<field name="axisAlwaysIncludeZero" type="boolean"/>
+		<field name="showSeparateAxis" type="boolean"/>
+		<field name="autoSort" type="boolean"/>
+		<field name="allowDuplicates" type="boolean"/>
+	</fields>
+</class>
+
+
+<class type="class">
+	<name>Graph_3D</name>
+	<description>3D Graph</description>
+	<icon>Graph_3D.gif</icon>
+<graphics>
+	<bounds x="0" y="0" width="119" height="112"/>
+	<line x1="7" y1="12" x2="7" y2="87" colour="-16777216" fixed="false" stroke="2" linetype="0" transparency="255"/>
+	<line x1="1" y1="83" x2="83" y2="83" colour="-16777216" fixed="false" stroke="2" linetype="0" transparency="255"/>	
+		<line x1="7" y1="83" x2="53" y2="40" colour="-16777216" fixed="false" stroke="2" linetype="0" transparency="255"/>
+		<line x1="53" y1="40" x2="45" y2="43" colour="-16777216" fixed="false" stroke="2" linetype="0" transparency="255"/>
+		<line x1="53" y1="40" x2="49" y2="48" colour="-16777216" fixed="false" stroke="2" linetype="0" transparency="255"/>			
+	<line x1="7" y1="12" x2="4" y2="20" colour="-16777216" fixed="false" stroke="2" linetype="0" transparency="255"/>
+	<line x1="7" y1="12" x2="10" y2="20" colour="-16777216" fixed="false" stroke="2" linetype="0" transparency="255"/>
+	<line x1="83" y1="83" x2="77" y2="86" colour="-16777216" fixed="false" stroke="2" linetype="0" transparency="255"/>
+	<line x1="83" y1="83" x2="77" y2="80" colour="-16777216" fixed="false" stroke="2" linetype="0" transparency="255"/>
+	<text string="x" colour="16777216" x="86" y="95" fontname="Arial" fontstyle="1" fontsize="13" transparency="255"/>
+	<text string="z" colour="16777216" x="12" y="11" fontname="Arial" fontstyle="1" fontsize="13" transparency="255"/>
+	<text string="y" colour="16777216" x="58" y="45" fontname="Arial" fontstyle="1" fontsize="13" transparency="255"/>	
+</graphics>
+	<ports>
+		<port name="z" type="double" x="7" y="39" portConnection="" strict="false" />
+		<port name="y" type="double" x="30" y="62" portConnection="" strict="true" />
+		<port name="x" type="double" x="53" y="83" portConnection="" strict="false" />
+		</ports>
+	<fields>
+		<field name="X_axis_name" type="String"  />
+		<field name="Y_axis_name" type="String"  />
+		<field name="Z_axis_name" type="String"  />
+	</fields>
+</class>
+
+
+<class type="class">
+	<name>ResG</name>
+	<description>Four-pole model form G</description>
+	<icon>resG.gif</icon>
+<graphics>
+<bounds x="0" y="0" width="155" height="85"/>
+<rect x="41" y="9" width="73" height="73" colour="-2293761" filled="true" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<rect x="40" y="8" width="75" height="75" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="8" y1="23" x2="40" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="8" y1="68" x2="40" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="115" y1="23" x2="148" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="115" y1="68" x2="148" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="40" y1="53" x2="53" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="53" y1="68" x2="40" y2="83" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="115" y1="8" x2="100" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="100" y1="23" x2="115" y2="38" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<text string="ResG" colour="-16777216" x="46" y="53" fontname="Arial" fontstyle="1" fontsize="23" transparency="255"/>
+<text string="Q1" colour="-16777216" x="14" y="15" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q2" colour="-16777216" x="120" y="15" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p1" colour="-16777216" x="15" y="60" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p2e" colour="-16777216" x="120" y="60" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="Q1" type="double" x="8" y="23" portConnection="" strict="true" />
+		<port name="p1" type="double" x="8" y="68" portConnection="" strict="true" />
+		<port name="Q2" type="double" x="148" y="23" portConnection="" strict="true" />
+		<port name="p2e" type="double" x="148" y="68" portConnection="" strict="true" />
+	</ports>
+	<fields>
+		<field name="res_type" type="String" value="RRa" />
+		<field name="l" type="double" value="0.02" />
+		<field name="d" type="double" value="0.002" />
+		<field name="dlt" type="double" value="5e-06" />
+		<field name="kE" type="double" value="2" />
+		<field name="mu" type="double" value="0.7" />
+		<field name="dltpN" type="double" value="2e+05" />
+		<field name="QN" type="double" value="1e-04" />
+		<field name="A" type="double" value="1e-04" />
+		<field name="pmax" type="double" value="2.5e+07" />
+		<field name="epsap" type="double" value="1" />
+		<field name="epsr" type="double" value="1.0E-8" />
+		<field name="initp2e" type="double" value="4.94126E+6" />
+	</fields>
+</class>
+
+
+<class type="class">
+	<name>ResH</name>
+	<description>Local hydraulics resistance, four-pole model form H</description>
+	<icon>resH.gif</icon>
+<graphics>
+<bounds x="0" y="0" width="155" height="85"/>
+<rect x="40" y="8" width="75" height="75" colour="-2293761" filled="true" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<rect x="40" y="8" width="75" height="75" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="8" y1="23" x2="40" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="8" y1="68" x2="40" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="115" y1="23" x2="147" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="115" y1="68" x2="147" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="40" y1="8" x2="55" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="55" y1="23" x2="40" y2="38" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="115" y1="53" x2="100" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="100" y1="68" x2="115" y2="83" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<text string="Q1" colour="-16777216" x="12" y="15" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q2" colour="-16777216" x="120" y="15" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p1e" colour="-16777216" x="7" y="60" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p2" colour="-16777216" x="121" y="60" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="ResH" colour="-16777216" x="46" y="55" fontname="Arial" fontstyle="1" fontsize="23" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="Q1" type="double" x="8" y="23" portConnection="" strict="true" />
+		<port name="p1e" type="double" x="8" y="68" portConnection="" strict="true" />
+		<port name="Q2" type="double" x="148" y="23" portConnection="" strict="true" />
+		<port name="p2" type="double" x="148" y="68" portConnection="" strict="true" />
+	</ports>
+	<fields>
+		<field name="res_type" type="String" value="RRa" />
+		<field name="l" type="double" value="0.02" />
+		<field name="d" type="double" value="0.002" />
+		<field name="dlt" type="double" value="5e-06" />
+		<field name="kE" type="double" value="2" />
+		<field name="mu" type="double" value="0.7" />
+		<field name="dltpN" type="double" value="2e+05" />
+		<field name="QN" type="double" value="1e-04" />
+		<field name="A" type="double" value="1e-04" />
+		<field name="pmax" type="double" value="2.45e+07" />
+		<field name="epsap" type="double" value="1" />
+		<field name="epsr" type="double" value="1.0E-8" />
+		<field name="initp1e" type="double" value="3.31842e+06" />
+	</fields>
+</class>
+
+
+<class type="class">
+	<name>ResY</name>
+	<description>Local hydraulics resistance, four-pole model form Y</description>
+	<icon>resY.gif</icon>
+<graphics>
+<bounds x="0" y="0" width="155" height="85"/>
+<rect x="40" y="8" width="75" height="75" colour="-2293761" filled="true" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<rect x="40" y="8" width="75" height="75" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="8" y1="23" x2="40" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="8" y1="68" x2="40" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="115" y1="23" x2="147" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="115" y1="68" x2="147" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="40" y1="53" x2="55" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="55" y1="68" x2="40" y2="83" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="115" y1="53" x2="100" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="100" y1="68" x2="115" y2="83" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<text string="Q1" colour="-16777216" x="12" y="15" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q2" colour="-16777216" x="120" y="15" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p1" colour="-16777216" x="13" y="60" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p2" colour="-16777216" x="121" y="60" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="ResY" colour="-16777216" x="49" y="55" fontname="Arial" fontstyle="1" fontsize="23" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="Q1" type="double" x="8" y="23" portConnection="" strict="true" />
+		<port name="p1" type="double" x="8" y="68" portConnection="" strict="true" />
+		<port name="Q2" type="double" x="148" y="23" portConnection="" strict="true" />
+		<port name="p2" type="double" x="148" y="68" portConnection="" strict="true" />
+	</ports>
+	<fields>
+		<field name="res_type" type="String" value="RRa" />
+		<field name="l" type="double" value="0.02" />
+		<field name="d" type="double" value="0.002" />
+		<field name="dlt" type="double" value="5e-06" />
+		<field name="kE" type="double" value="2" />
+		<field name="mu" type="double" value="0.7" />
+		<field name="dltpN" type="double" value="2e+05" />
+		<field name="QN" type="double" value="1e-04" />
+		<field name="A" type="double" value="1e-04" />
+		<field name="initQ1" type="double" value="2.892e-05" />
+	</fields>
+</class>
+
+
+<class type="class">
+	<name>TubeG</name>
+	<description>Hydraulic tube L-R/2-C-R/2, four_pole model form G</description>
+	<icon>tubeG.gif</icon>
+<graphics>
+<bounds x="0" y="0" width="157" height="92"/>
+<rect x="40" y="8" width="75" height="75" colour="-2293761" filled="true" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<rect x="40" y="8" width="75" height="75" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="8" y1="23" x2="40" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="8" y1="68" x2="40" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="115" y1="23" x2="147" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="115" y1="68" x2="147" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="40" y1="53" x2="55" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="55" y1="68" x2="40" y2="83" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="115" y1="8" x2="100" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="100" y1="23" x2="115" y2="38" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<text string="TubeG" colour="-16777216" x="43" y="52" fontname="Arial" fontstyle="1" fontsize="23" transparency="255"/>
+<text string="Q1" colour="-16777216" x="12" y="15" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q2" colour="-16777216" x="120" y="15" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p1" colour="-16777216" x="15" y="60" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p2e" colour="-16777216" x="120" y="60" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="Q1" type="double" x="8" y="23" portConnection="" strict="true" />
+		<port name="p1" type="double" x="8" y="68" portConnection="" strict="true" />
+		<port name="Q2" type="double" x="148" y="23" portConnection="" strict="true" />
+		<port name="p2e" type="double" x="148" y="68" portConnection="" strict="true" />
+	</ports>
+	<fields>
+		<field name="l" type="double" value="0.02" />
+		<field name="d" type="double" value="0.002" />
+		<field name="K" type="double" value="2.1E+11" />		
+		<field name="s" type="double" value="0.003" />		
+		<field name="epsap" type="double" value="1.0" />
+		<field name="epsr" type="double" value="1.0E-8" />
+		<field name="nc" type="double" value="2" />
+		<field name="kr" type="double" value="2" />
+		<field name="initQ1" type="double" value="1.0E-4" />
+		<field name="initp2e" type="double" value="4.92E+6" />
+	</fields>
+</class>
+
+
+<class type="class">
+	<name>Tug</name>
+	<description>Hydraulic tube L-R/2-C-R/2, four_pole model form G</description>
+	<icon>tug.gif</icon>
+<graphics>
+<bounds x="0" y="0" width="157" height="92"/>
+<rect x="40" y="8" width="75" height="75" colour="-2293761" filled="true" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<rect x="40" y="8" width="75" height="75" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="8" y1="23" x2="40" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="8" y1="68" x2="40" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="40" y1="53" x2="55" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="55" y1="68" x2="40" y2="83" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<text string="Tubeg" colour="-16777216" x="43" y="52" fontname="Arial" fontstyle="1" fontsize="23" transparency="255"/>
+<text string="Q1" colour="-16777216" x="13" y="15" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p1" colour="-16777216" x="15" y="60" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="Q1" type="double" x="8" y="23" portConnection="" strict="true" />
+		<port name="p1" type="double" x="8" y="68" portConnection="" strict="true" />
+	</ports>
+	<fields>
+		<field name="l" type="double" value="0.02" />
+		<field name="d" type="double" value="0.002" />
+		<field name="K" type="double" value="2.1E+11" />		
+		<field name="s" type="double" value="0.003" />		
+		<field name="kr" type="double" value="2" />
+		<field name="initQ1" type="double" value="1.0E-4" />
+		<field name="initp2" type="double" value="4.94E+6" />
+	</fields>
+</class>
+
+
+<class type="class">
+	<name>TubeH</name>
+	<description>Hydraulic tube R/2-C-R/2-L, four-pole model form H</description>
+	<icon>tubeH.gif</icon>
+<graphics>
+<bounds x="0" y="0" width="156" height="91"/>
+<rect x="40" y="8" width="75" height="75" colour="-2293761" filled="true" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<rect x="40" y="8" width="75" height="75" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="8" y1="23" x2="40" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="8" y1="68" x2="40" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="115" y1="23" x2="147" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="115" y1="68" x2="147" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="40" y1="8" x2="55" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="55" y1="23" x2="40" y2="38" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="115" y1="53" x2="100" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="100" y1="68" x2="115" y2="83" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<text string="TubeH" colour="-16777216" x="43" y="53" fontname="Arial" fontstyle="1" fontsize="23" transparency="255"/>
+<text string="Q1" colour="-16777216" x="12" y="15" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q2" colour="-16777216" x="120" y="15" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p1e" colour="-16777216" x="7" y="60" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p2" colour="-16777216" x="121" y="60" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="Q1" type="double" x="9" y="23" portConnection="" strict="true" />
+		<port name="p1e" type="double" x="9" y="68" portConnection="" strict="true" />
+		<port name="Q2" type="double" x="148" y="23" portConnection="" strict="true" />
+		<port name="p2" type="double" x="148" y="68" portConnection="" strict="true" />
+	</ports>
+	<fields>
+		<field name="l" type="double" value="0.02" />
+		<field name="d" type="double" value="0.002" />		
+		<field name="K" type="double" value="2.1E+11" />		
+		<field name="s" type="double" value="0.003" />		
+		<field name="nc" type="double" value="1" />
+		<field name="kr" type="double" value="2" />
+		<field name="epsap" type="double" value="1" />
+		<field name="epsr" type="double" value="1.0e-8" />
+		<field name="initQ2" type="double" value="1e-4" />
+		<field name="initp1e" type="double" value="5.04E+6" />
+	</fields>
+</class>
+
+
+<class type="class">
+	<name>Tuh</name>
+	<description>Hydraulic tube R/2-C-R/2-L, four-pole model form H</description>
+	<icon>tuh.gif</icon>
+<graphics>
+<bounds x="0" y="0" width="156" height="91"/>
+<rect x="40" y="8" width="75" height="75" colour="-2293761" filled="true" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<rect x="40" y="8" width="75" height="75" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="115" y1="23" x2="147" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="115" y1="68" x2="147" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="115" y1="53" x2="100" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="100" y1="68" x2="115" y2="83" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<text string="Tubeh" colour="-16777216" x="43" y="53" fontname="Arial" fontstyle="1" fontsize="23" transparency="255"/>
+<text string="Q2" colour="-16777216" x="120" y="15" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p2" colour="-16777216" x="121" y="60" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="Q2" type="double" x="148" y="23" portConnection="" strict="true" />
+		<port name="p2" type="double" x="148" y="68" portConnection="" strict="true" />
+	</ports>
+	<fields>
+		<field name="l" type="double" value="0.02" />
+		<field name="d" type="double" value="0.002" />
+		<field name="K" type="double" value="2.1E+11" />		
+		<field name="s" type="double" value="0.003" />		
+		<field name="kr" type="double" value="2" />
+		<field name="initQ2" type="double" value="1e-4" />
+		<field name="initp1" type="double" value="5.04E+6" />
+	</fields>
+</class>
+
+
+<class type="class">
+	<name>TubeY</name>
+	<description>Local hydraulics resistance, four-pole model form Y</description>
+	<icon>TubeY.gif</icon>
+<graphics>
+<bounds x="0" y="0" width="155" height="85"/>
+<rect x="40" y="8" width="75" height="75" colour="-2293761" filled="true" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<rect x="40" y="8" width="75" height="75" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="8" y1="23" x2="40" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="8" y1="68" x2="40" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="115" y1="23" x2="147" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="115" y1="68" x2="147" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="40" y1="53" x2="55" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="55" y1="68" x2="40" y2="83" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="115" y1="53" x2="100" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="100" y1="68" x2="115" y2="83" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<text string="Q1" colour="-16777216" x="12" y="15" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q2" colour="-16777216" x="120" y="15" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p1" colour="-16777216" x="13" y="60" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p2" colour="-16777216" x="121" y="60" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="TubeY" colour="-16777216" x="41" y="55" fontname="Arial" fontstyle="1" fontsize="24" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="Q1" type="double" x="8" y="23" portConnection="" strict="true" />
+		<port name="p1" type="double" x="8" y="68" portConnection="" strict="true" />
+		<port name="Q2" type="double" x="148" y="23" portConnection="" strict="true" />
+		<port name="p2" type="double" x="148" y="68" portConnection="" strict="true" />
+	</ports>
+	<fields>
+		<field name="l" type="double" value="12" />
+		<field name="d" type="double" value="0.019" />
+		<field name="K" type="double" value="2.1E11" />		
+		<field name="s" type="double" value="0.003" />		
+		<field name="nc" type="double" value="1" />
+		<field name="kr" type="double" value="1.5" />
+		<field name="initQ1" type="double" value="1e-4" />
+		<field name="initp3" type="double" value="5E6" />
+		<field name="initQ2" type="double" value="1E-4" />
+	</fields>
+</class>
+
+
+<class type="class">
+	<name>TubeZ</name>
+	<description>Hydraulic tube L-R/2-C-R/2, four_pole model form Z</description>
+	<icon>tubeZ.gif</icon>
+<graphics>
+<bounds x="0" y="0" width="157" height="92"/>
+<rect x="40" y="8" width="75" height="75" colour="-2293761" filled="true" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<rect x="40" y="8" width="75" height="75" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="8" y1="23" x2="40" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="8" y1="68" x2="40" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="115" y1="23" x2="147" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="115" y1="68" x2="147" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="40" y1="8" x2="55" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="55" y1="23" x2="40" y2="38" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="115" y1="8" x2="100" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="100" y1="23" x2="115" y2="38" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<text string="TubeZ" colour="-16777216" x="42" y="54" fontname="Arial" fontstyle="1" fontsize="23" transparency="255"/>
+<text string="Q1" colour="-16777216" x="12" y="15" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q2" colour="-16777216" x="120" y="15" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p1e" colour="-16777216" x="9" y="60" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p2e" colour="-16777216" x="120" y="60" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="Q1" type="double" x="8" y="23" portConnection="" strict="true" />
+		<port name="p1e" type="double" x="8" y="68" portConnection="" strict="true" />
+		<port name="Q2" type="double" x="148" y="23" portConnection="" strict="true" />
+		<port name="p2e" type="double" x="148" y="68" portConnection="" strict="true" />
+	</ports>
+	<fields>
+		<field name="l" type="double" value="12" />
+		<field name="d" type="double" value="0.019" />
+		<field name="K" type="double" value="2.1E11" />		
+		<field name="s" type="double" value="0.003" />		
+		<field name="nc" type="double" value="1" />
+		<field name="kr" type="double" value="1.5" />
+		<field name="initp1e" type="double" value="5E6" />
+		<field name="initQ3" type="double" value="1E-4" />
+		<field name="initp2e" type="double" value="4.8E6" />
+	</fields>
+</class>
+
+
+<class type="class">
+	<name>VeZ</name>
+	<description>Volume elasticity</description>
+	<icon>veZ.gif</icon>
+<graphics>
+<bounds x="0" y="0" width="157" height="92"/>
+<rect x="40" y="8" width="75" height="75" colour="-2293761" filled="true" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<rect x="40" y="8" width="75" height="75" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="8" y1="23" x2="40" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="8" y1="68" x2="40" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="115" y1="23" x2="147" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="115" y1="68" x2="147" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="40" y1="8" x2="55" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="55" y1="23" x2="40" y2="38" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="115" y1="8" x2="100" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<line x1="100" y1="23" x2="115" y2="38" colour="-16777216" fixed="false" stroke="1" linetype="0.0" transparency="255"/>
+<text string="VeZ" colour="-16777216" x="58" y="54" fontname="Arial" fontstyle="1" fontsize="23" transparency="255"/>
+<text string="Q1" colour="-16777216" x="12" y="15" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q2" colour="-16777216" x="120" y="15" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p1e" colour="-16777216" x="7" y="60" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p2e" colour="-16777216" x="120" y="60" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="Q1" type="double" x="8" y="23" portConnection="" strict="true" />
+		<port name="p1e" type="double" x="8" y="68" portConnection="" strict="true" />
+		<port name="Q2" type="double" x="148" y="23" portConnection="" strict="true" />
+		<port name="p2e" type="double" x="148" y="68" portConnection="" strict="true" />
+	</ports>
+	<fields>
+		<field name="l" type="double" value="0.1" />
+		<field name="d" type="double" value="0.1" />
+		<field name="initp1e" type="double" value="5E6" />
+	</fields>
+</class>
+
+
+<class type="class">
+	<name>IEH4_12_2</name>
+	<description>Hydraulic interface element</description>
+	<icon>IEH4_12_2.gif</icon>
+<graphics>
+<bounds x="0" y="0" width="155" height="175"/>
+<rect x="40" y="8" width="75" height="165" colour="-1644826" filled="true" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<rect x="40" y="8" width="75" height="165" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0" transparency="255"/>
+
+<line x1="8" y1="113" x2="40" y2="113" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="158" x2="40" y2="158" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="23" x2="147" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="68" x2="147" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="113" x2="147" y2="113" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="158" x2="147" y2="158" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<text string="IEH4" colour="-16777216" x="48" y="100" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="1-2" colour="-16777216" x="56" y="134" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="2" colour="-16777216" x="70" y="168" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="Q2" colour="-16777216" x="122" y="16" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p2" colour="-16777216" x="122" y="61" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q1" colour="-16777216" x="19" y="106" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q3" colour="-16777216" x="122" y="106" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p1" colour="-16777216" x="19" y="151" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p3" colour="-16777216" x="122" y="151" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="Q2" type="double" x="147" y="23" portConnection="" strict="true" />
+		<port name="p2" type="double" x="147" y="68" portConnection="" strict="true" />
+		<port name="Q1" type="double" x="8" y="113" portConnection="" strict="true" />
+		<port name="Q3" type="double" x="147" y="113" portConnection="" strict="true" />
+		<port name="p1" type="double" x="8" y="158" portConnection="" strict="true" />
+		<port name="p3" type="double" x="147" y="158" portConnection="" strict="true" />
+	</ports>
+</class>
+
+
+<class type="class">
+	<name>IEH4_12_3</name>
+	<description>Hydraulic interface element</description>
+	<icon>IEH4_12_3.gif</icon>
+<graphics>
+<bounds x="0" y="0" width="155" height="175"/>
+<rect x="40" y="8" width="75" height="165" colour="-1644826" filled="true" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<rect x="40" y="8" width="75" height="165" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="23" x2="40" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="68" x2="40" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="23" x2="147" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="68" x2="147" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="113" x2="147" y2="113" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="158" x2="147" y2="158" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<text string="IEH4" colour="-16777216" x="48" y="100" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="1-2" colour="-16777216" x="56" y="134" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="3" colour="-16777216" x="70" y="168" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="Q1" colour="-16777216" x="19" y="16" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q2" colour="-16777216" x="122" y="16" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p1" colour="-16777216" x="19" y="61" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p2" colour="-16777216" x="122" y="61" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q3" colour="-16777216" x="122" y="106" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p3" colour="-16777216" x="122" y="151" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="Q1" type="double" x="8" y="23" portConnection="" strict="true" />
+		<port name="Q2" type="double" x="147" y="23" portConnection="" strict="true" />
+		<port name="p1" type="double" x="8" y="68" portConnection="" strict="true" />
+		<port name="p2" type="double" x="147" y="68" portConnection="" strict="true" />
+		<port name="Q3" type="double" x="147" y="113" portConnection="" strict="true" />
+		<port name="p3" type="double" x="147" y="158" portConnection="" strict="true" />
+	</ports>
+</class>
+
+
+<class type="class">
+	<name>IEH4_21_1</name>
+	<description>Hydraulic interface element</description>
+	<icon>IEH4_21_1.gif</icon>
+<graphics>
+<bounds x="0" y="0" width="155" height="175"/>
+<rect x="40" y="8" width="75" height="165" colour="-1644826" filled="true" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<rect x="40" y="8" width="75" height="165" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="23" x2="40" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="68" x2="40" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="113" x2="40" y2="113" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="158" x2="40" y2="158" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="23" x2="147" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="68" x2="147" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<text string="IEH4" colour="-16777216" x="48" y="100" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="2-1" colour="-16777216" x="56" y="134" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="1" colour="-16777216" x="70" y="168" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="Q1" colour="-16777216" x="19" y="16" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q3" colour="-16777216" x="122" y="16" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p1" colour="-16777216" x="19" y="61" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p3" colour="-16777216" x="122" y="61" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q2" colour="-16777216" x="19" y="106" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p2" colour="-16777216" x="19" y="151" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="Q1" type="double" x="8" y="23" portConnection="" strict="true" />
+		<port name="Q3" type="double" x="147" y="23" portConnection="" strict="true" />
+		<port name="p1" type="double" x="8" y="68" portConnection="" strict="true" />
+		<port name="p3" type="double" x="147" y="68" portConnection="" strict="true" />
+		<port name="Q2" type="double" x="8" y="113" portConnection="" strict="true" />
+		<port name="p2" type="double" x="8" y="158" portConnection="" strict="true" />
+	</ports>
+</class>
+
+
+<class type="class">
+	<name>IEH4_21_2</name>
+	<description>Hydraulic interface element</description>
+	<icon>IEH4_21_2.gif</icon>
+<graphics>
+<bounds x="0" y="0" width="155" height="175"/>
+<rect x="40" y="8" width="75" height="165" colour="-1644826" filled="true" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<rect x="40" y="8" width="75" height="165" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="23" x2="40" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="68" x2="40" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="113" x2="40" y2="113" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="158" x2="40" y2="158" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="113" x2="147" y2="113" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="158" x2="147" y2="158" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<text string="IEH4" colour="-16777216" x="48" y="100" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="2-1" colour="-16777216" x="56" y="134" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="2" colour="-16777216" x="70" y="168" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="Q1" colour="-16777216" x="19" y="16" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p1" colour="-16777216" x="19" y="61" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q2" colour="-16777216" x="19" y="106" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q3" colour="-16777216" x="122" y="106" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p2" colour="-16777216" x="19" y="151" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p3" colour="-16777216" x="122" y="151" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="Q1" type="double" x="8" y="23" portConnection="" strict="true" />
+		<port name="p1" type="double" x="8" y="68" portConnection="" strict="true" />
+		<port name="Q2" type="double" x="8" y="113" portConnection="" strict="true" />
+		<port name="Q3" type="double" x="147" y="113" portConnection="" strict="true" />
+		<port name="p2" type="double" x="8" y="158" portConnection="" strict="true" />
+		<port name="p3" type="double" x="147" y="158" portConnection="" strict="true" />
+	</ports>
+</class>
+
+
+<class type="class">
+	<name>IEH6_12_2</name>
+	<description>Hydraulic interface element</description>
+	<icon>IEH6_12_2.gif</icon>
+<graphics>
+<bounds x="0" y="0" width="155" height="265"/>
+<rect x="40" y="8" width="75" height="255" colour="-1644826" filled="true" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<rect x="40" y="8" width="75" height="255" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="203" x2="40" y2="203" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="248" x2="40" y2="248" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="23" x2="147" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="68" x2="147" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="203" x2="147" y2="203" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="248" x2="147" y2="248" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<text string="IEH6" colour="-16777216" x="48" y="100" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="1-2" colour="-16777216" x="56" y="134" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="2" colour="-16777216" x="68" y="168" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="Q2" colour="-16777216" x="122" y="16" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p2" colour="-16777216" x="122" y="61" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q1" colour="-16777216" x="19" y="196" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q3" colour="-16777216" x="122" y="196" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p1" colour="-16777216" x="17" y="241" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p3" colour="-16777216" x="121" y="241" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="Q2" type="double" x="147" y="23" portConnection="" strict="true" />
+		<port name="p2" type="double" x="147" y="68" portConnection="" strict="true" />
+		<port name="Q1" type="double" x="8" y="203" portConnection="" strict="true" />
+		<port name="Q3" type="double" x="147" y="203" portConnection="" strict="true" />
+		<port name="p1" type="double" x="8" y="248" portConnection="" strict="true" />
+		<port name="p3" type="double" x="147" y="248" portConnection="" strict="true" />
+	</ports>
+</class>
+
+
+<class type="class">
+	<name>IEH6_12_3</name>
+	<description>Hydraulic interface element</description>
+	<icon>IEH6_12_3.gif</icon>
+<graphics>
+<bounds x="0" y="0" width="155" height="265"/>
+<rect x="40" y="8" width="75" height="255" colour="-1644826" filled="true" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<rect x="40" y="8" width="75" height="255" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0" transparency="255"/>
+
+<line x1="8" y1="203" x2="40" y2="203" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="248" x2="40" y2="248" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="23" x2="147" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="68" x2="147" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="203" x2="147" y2="203" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="248" x2="147" y2="248" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<text string="IEH6" colour="-16777216" x="48" y="100" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="1-2" colour="-16777216" x="56" y="134" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="3" colour="-16777216" x="68" y="168" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="Q2" colour="-16777216" x="122" y="16" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p2" colour="-16777216" x="122" y="61" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q1" colour="-16777216" x="19" y="196" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q3" colour="-16777216" x="122" y="196" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p1" colour="-16777216" x="17" y="241" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p3" colour="-16777216" x="121" y="241" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="Q2" type="double" x="147" y="23" portConnection="" strict="true" />
+		<port name="p2" type="double" x="147" y="68" portConnection="" strict="true" />
+		<port name="Q1" type="double" x="8" y="203" portConnection="" strict="true" />
+		<port name="Q3" type="double" x="147" y="203" portConnection="" strict="true" />
+		<port name="p1" type="double" x="8" y="248" portConnection="" strict="true" />
+		<port name="p3" type="double" x="147" y="248" portConnection="" strict="true" />
+	</ports>
+</class>
+
+
+<class type="class">
+	<name>IEH6_13_1</name>
+	<description>Hydraulic interface element</description>
+	<icon>IEH6_13_1.gif</icon>
+<graphics>
+<bounds x="0" y="0" width="155" height="265"/>
+<rect x="40" y="8" width="75" height="255" colour="-1644826" filled="true" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<rect x="40" y="8" width="75" height="255" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="23" x2="40" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="68" x2="40" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="23" x2="147" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="68" x2="147" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="113" x2="147" y2="113" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="158" x2="147" y2="158" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="203" x2="147" y2="203" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="248" x2="147" y2="248" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<text string="IEH6" colour="-16777216" x="48" y="100" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="1-3" colour="-16777216" x="56" y="134" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="1" colour="-16777216" x="70" y="168" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="Q1" colour="-16777216" x="15" y="16" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p1" colour="-16777216" x="16" y="61" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q2" colour="-16777216" x="122" y="16" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p2" colour="-16777216" x="122" y="61" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q3" colour="-16777216" x="122" y="106" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p3" colour="-16777216" x="122" y="151" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q4" colour="-16777216" x="122" y="196" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p4" colour="-16777216" x="122" y="241" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="Q1" type="double" x="8" y="23" portConnection="" strict="true" />
+		<port name="p1" type="double" x="8" y="68" portConnection="" strict="true" />	
+		<port name="Q2" type="double" x="147" y="23" portConnection="" strict="true" />
+		<port name="p2" type="double" x="147" y="68" portConnection="" strict="true" />
+		<port name="Q3" type="double" x="147" y="113" portConnection="" strict="true" />
+		<port name="p3" type="double" x="147" y="158" portConnection="" strict="true" />
+		<port name="Q4" type="double" x="147" y="203" portConnection="" strict="true" />
+		<port name="p4" type="double" x="147" y="248" portConnection="" strict="true" />
+	</ports>
+</class>
+
+
+<class type="class">
+	<name>IEH6_21_1</name>
+	<description>Hydraulic interface element</description>
+	<icon>IEH6_21_1.gif</icon>
+<graphics>
+<bounds x="0" y="0" width="155" height="265"/>
+<rect x="40" y="8" width="75" height="255" colour="-1644826" filled="true" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<rect x="40" y="8" width="75" height="255" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="23" x2="40" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="68" x2="40" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="203" x2="40" y2="203" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="248" x2="40" y2="248" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="203" x2="147" y2="203" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="248" x2="147" y2="248" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<text string="IEH6" colour="-16777216" x="48" y="100" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="2-1" colour="-16777216" x="56" y="134" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="1" colour="-16777216" x="70" y="168" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="Q1" colour="-16777216" x="19" y="16" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p1" colour="-16777216" x="19" y="61" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q2" colour="-16777216" x="19" y="196" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q3" colour="-16777216" x="122" y="196" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p2" colour="-16777216" x="17" y="241" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p3" colour="-16777216" x="121" y="241" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="Q1" type="double" x="8" y="23" portConnection="" strict="true" />
+		<port name="p1" type="double" x="8" y="68" portConnection="" strict="true" />
+		<port name="Q2" type="double" x="8" y="203" portConnection="" strict="true" />
+		<port name="Q3" type="double" x="147" y="203" portConnection="" strict="true" />
+		<port name="p2" type="double" x="8" y="248" portConnection="" strict="true" />
+		<port name="p3" type="double" x="147" y="248" portConnection="" strict="true" />
+	</ports>
+</class>
+
+
+<class type="class">
+	<name>IEH6_22</name>
+	<description>Hydraulic interface element</description>
+	<icon>IEH6_22.gif</icon>
+<graphics>
+<bounds x="0" y="0" width="155" height="265"/>
+<rect x="40" y="8" width="75" height="255" colour="-1644826" filled="true" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<rect x="40" y="8" width="75" height="255" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="23" x2="40" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="68" x2="40" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="113" x2="40" y2="113" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="158" x2="40" y2="158" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="23" x2="147" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="68" x2="147" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="203" x2="147" y2="203" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="248" x2="147" y2="248" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<text string="IEH6" colour="-16777216" x="48" y="100" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="2-2" colour="-16777216" x="56" y="134" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="Q1" colour="-16777216" x="19" y="16" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q3" colour="-16777216" x="122" y="16" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p1" colour="-16777216" x="19" y="61" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p3" colour="-16777216" x="122" y="61" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q2" colour="-16777216" x="19" y="106" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p2" colour="-16777216" x="19" y="151" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q4" colour="-16777216" x="122" y="196" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p4" colour="-16777216" x="121" y="241" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="Q1" type="double" x="8" y="23" portConnection="" strict="true" />
+		<port name="Q3" type="double" x="147" y="23" portConnection="" strict="true" />
+		<port name="p1" type="double" x="8" y="68" portConnection="" strict="true" />
+		<port name="p3" type="double" x="147" y="68" portConnection="" strict="true" />
+		<port name="Q2" type="double" x="8" y="113" portConnection="" strict="true" />
+		<port name="p2" type="double" x="8" y="158" portConnection="" strict="true" />
+		<port name="Q4" type="double" x="147" y="203" portConnection="" strict="true" />
+		<port name="p4" type="double" x="147" y="248" portConnection="" strict="true" />
+	</ports>
+</class>
+
+
+<class type="class">
+	<name>IEH8_13_1</name>
+	<description>Hydraulic interface element</description>
+	<icon>IEH8_13_1.gif</icon>
+<graphics>
+<bounds x="0" y="0" width="155" height="355"/>
+<rect x="40" y="8" width="75" height="345" colour="-1644826" filled="true" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<rect x="40" y="8" width="75" height="345" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="23" x2="40" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="68" x2="40" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="23" x2="147" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="68" x2="147" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="113" x2="147" y2="113" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="158" x2="147" y2="158" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="293" x2="147" y2="293" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="338" x2="147" y2="338" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<text string="IEH8" colour="-16777216" x="48" y="100" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="1-3" colour="-16777216" x="56" y="134" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="1" colour="-16777216" x="68" y="168" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="Q1" colour="-16777216" x="16" y="16" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p1" colour="-16777216" x="17" y="61" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q2" colour="-16777216" x="122" y="16" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p2" colour="-16777216" x="122" y="61" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q3" colour="-16777216" x="122" y="106" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p3" colour="-16777216" x="122" y="151" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q4" colour="-16777216" x="121" y="286" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p4" colour="-16777216" x="121" y="331" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="Q2" type="double" x="147" y="23" portConnection="" strict="true" />
+		<port name="p2" type="double" x="147" y="68" portConnection="" strict="true" />
+		<port name="Q3" type="double" x="147" y="113" portConnection="" strict="true" />
+		<port name="p3" type="double" x="147" y="158" portConnection="" strict="true" />
+		<port name="Q1" type="double" x="8" y="23" portConnection="" strict="true" />
+		<port name="Q4" type="double" x="147" y="293" portConnection="" strict="true" />		
+		<port name="p1" type="double" x="8" y="68" portConnection="" strict="true" />
+		<port name="p4" type="double" x="147" y="338" portConnection="" strict="true" />		
+	</ports>
+</class>
+
+
+<class type="class">
+	<name>IEH8_13_2</name>
+	<description>Hydraulic interface element</description>
+	<icon>IEH8_13_2.gif</icon>
+<graphics>
+<bounds x="0" y="0" width="155" height="355"/>
+<rect x="40" y="8" width="75" height="345" colour="-1644826" filled="true" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<rect x="40" y="8" width="75" height="345" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="293" x2="40" y2="293" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="338" x2="40" y2="338" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="23" x2="147" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="68" x2="147" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="113" x2="147" y2="113" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="158" x2="147" y2="158" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="293" x2="147" y2="293" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="338" x2="147" y2="338" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<text string="IEH8" colour="-16777216" x="48" y="100" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="1-3" colour="-16777216" x="56" y="134" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="2" colour="-16777216" x="68" y="168" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="Q2" colour="-16777216" x="122" y="16" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p2" colour="-16777216" x="122" y="61" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q3" colour="-16777216" x="122" y="106" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p3" colour="-16777216" x="122" y="151" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q1" colour="-16777216" x="17" y="286" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q4" colour="-16777216" x="121" y="286" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p1" colour="-16777216" x="17" y="331" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p4" colour="-16777216" x="121" y="331" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="Q2" type="double" x="147" y="23" portConnection="" strict="true" />
+		<port name="p2" type="double" x="147" y="68" portConnection="" strict="true" />
+		<port name="Q3" type="double" x="147" y="113" portConnection="" strict="true" />
+		<port name="p3" type="double" x="147" y="158" portConnection="" strict="true" />
+		<port name="Q1" type="double" x="8" y="293" portConnection="" strict="true" />
+		<port name="Q4" type="double" x="147" y="293" portConnection="" strict="true" />		
+		<port name="p1" type="double" x="8" y="338" portConnection="" strict="true" />
+		<port name="p4" type="double" x="147" y="338" portConnection="" strict="true" />		
+	</ports>
+</class>
+
+
+<class type="class">
+	<name>IEH8_23_1</name>
+	<description>Hydraulic interface element</description>
+	<icon>IEH8_23_1.gif</icon>
+<graphics>
+<bounds x="0" y="0" width="155" height="355"/>
+<rect x="40" y="8" width="75" height="345" colour="-1644826" filled="true" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<rect x="40" y="8" width="75" height="345" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="23" x2="40" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="68" x2="40" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="113" x2="40" y2="113" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="158" x2="40" y2="158" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="23" x2="147" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="68" x2="147" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="113" x2="147" y2="113" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="158" x2="147" y2="158" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="293" x2="147" y2="293" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="338" x2="147" y2="338" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<text string="IEH8" colour="-16777216" x="48" y="100" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="2-3" colour="-16777216" x="56" y="134" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="1" colour="-16777216" x="68" y="168" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="Q1" colour="-16777216" x="16" y="16" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p1" colour="-16777216" x="17" y="61" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q2" colour="-16777216" x="16" y="106" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p2" colour="-16777216" x="16" y="151" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q3" colour="-16777216" x="122" y="16" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p3" colour="-16777216" x="122" y="61" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q4" colour="-16777216" x="122" y="106" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p4" colour="-16777216" x="122" y="151" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q5" colour="-16777216" x="121" y="286" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p5" colour="-16777216" x="121" y="331" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="Q1" type="double" x="8" y="23" portConnection="" strict="true" />
+		<port name="p1" type="double" x="8" y="68" portConnection="" strict="true" />
+		<port name="Q2" type="double" x="8" y="113" portConnection="" strict="true" />
+		<port name="p2" type="double" x="8" y="158" portConnection="" strict="true" />
+		<port name="Q3" type="double" x="147" y="23" portConnection="" strict="true" />
+		<port name="p3" type="double" x="147" y="68" portConnection="" strict="true" />
+		<port name="Q4" type="double" x="147" y="113" portConnection="" strict="true" />
+		<port name="p4" type="double" x="147" y="158" portConnection="" strict="true" />
+		<port name="Q5" type="double" x="147" y="293" portConnection="" strict="true" />		
+		<port name="p5" type="double" x="147" y="338" portConnection="" strict="true" />		
+	</ports>
+</class>
+
+
+<class type="class">
+	<name>IEH10_14_2</name>
+	<description>Hydraulic interface element</description>
+	<icon>IEH10_14_2.gif</icon>
+<graphics>
+<bounds x="0" y="0" width="155" height="445"/>
+<rect x="40" y="8" width="75" height="435" colour="-1644826" filled="true" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<rect x="40" y="8" width="75" height="435" colour="-16777216" filled="false" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="383" x2="40" y2="383" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="8" y1="428" x2="40" y2="428" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="23" x2="147" y2="23" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="68" x2="147" y2="68" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="113" x2="147" y2="113" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="158" x2="147" y2="158" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="203" x2="147" y2="203" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="248" x2="147" y2="248" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="383" x2="147" y2="383" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<line x1="115" y1="428" x2="147" y2="428" colour="-16777216" fixed="false" stroke="1" linetype="0" transparency="255"/>
+<text string="IEH10" colour="-16777216" x="38" y="100" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="1-4" colour="-16777216" x="56" y="134" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="2" colour="-16777216" x="68" y="168" fontname="Arial" fontstyle="1" fontsize="28" transparency="255"/>
+<text string="Q1" colour="-16777216" x="19" y="376" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p1" colour="-16777216" x="19" y="421" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q2" colour="-16777216" x="122" y="16" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p2" colour="-16777216" x="122" y="61" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q3" colour="-16777216" x="122" y="106" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p3" colour="-16777216" x="122" y="151" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q4" colour="-16777216" x="122" y="196" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p4" colour="-16777216" x="122" y="241" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="Q5" colour="-16777216" x="122" y="376" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+<text string="p5" colour="-16777216" x="122" y="421" fontname="Arial" fontstyle="1" fontsize="17" transparency="255"/>
+</graphics>
+	<ports>
+		<port name="Q1" type="double" x="8" y="383" portConnection="" strict="true" />
+		<port name="p1" type="double" x="8" y="428" portConnection="" strict="true" />
+		<port name="Q2" type="double" x="147" y="23" portConnection="" strict="true" />
+		<port name="p2" type="double" x="147" y="68" portConnection="" strict="true" />
+		<port name="Q3" type="double" x="147" y="113" portConnection="" strict="true" />
+		<port name="p3" type="double" x="147" y="158" portConnection="" strict="true" />
+		<port name="Q4" type="double" x="147" y="203" portConnection="" strict="true" />
+		<port name="p4" type="double" x="147" y="248" portConnection="" strict="true" />		
+		<port name="Q5" type="double" x="147" y="383" portConnection="" strict="true" />		
+		<port name="p5" type="double" x="147" y="428" portConnection="" strict="true" />		
+	</ports>
+</class>
+
+</package>

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE scheme SYSTEM "scheme.dtd">
+<scheme package="HydraulicElementsDemo_1.0" superclass="Process_dynamic_3D_1">
+<object name="TubeG_0" type="TubeG" static="false">
+<properties x="51" y="113" xsize="1.0" ysize="1.0" strict="true"/>
+<fields>
+<field name="l" type="double" value="2"/>
+<field name="d" type="double" value="0.019"/>
+<field name="K" type="double" value="2.1E11"/>
+<field name="s" type="double" value="0.003"/>
+<field name="epsap" type="double" value="0.1"/>
+<field name="epsr" type="double" value="1.0E-8"/>
+<field name="nc" type="double" value="7"/>
+<field name="kr" type="double" value="1.5"/>
+<field name="initQ1" type="double" value="1.0E-4"/>
+<field name="initp2e" type="double" value="4.97E6"/>
+</fields>
+</object>
+<object name="TubeG_" type="TubeG" static="false">
+<properties x="191" y="113" xsize="1.0" ysize="1.0" strict="true"/>
+<fields>
+<field name="l" type="double" value="2"/>
+<field name="d" type="double" value="0.019"/>
+<field name="K" type="double" value="2.1E11"/>
+<field name="s" type="double" value="0.003"/>
+<field name="epsap" type="double" value="0.1"/>
+<field name="epsr" type="double" value="1.0E-6"/>
+<field name="nc" type="double" value="7"/>
+<field name="kr" type="double" value="1.5"/>
+<field name="initQ1" type="double" value="1.0E-4"/>
+<field name="initp2e" type="double" value="4.94E6"/>
+</fields>
+</object>
+<object name="TubeG_2" type="TubeG" static="false">
+<properties x="331" y="113" xsize="1.0" ysize="1.0" strict="true"/>
+<fields>
+<field name="l" type="double" value="2"/>
+<field name="d" type="double" value="0.019"/>
+<field name="K" type="double" value="2.1E11"/>
+<field name="s" type="double" value="0.003"/>
+<field name="epsap" type="double" value="0.1"/>
+<field name="epsr" type="double" value="1.0E-8"/>
+<field name="nc" type="double" value="7"/>
+<field name="kr" type="double" value="1.5"/>
+<field name="initQ1" type="double" value="1.0E-4"/>
+<field name="initp2e" type="double" value="4.91E6"/>
+</fields>
+</object>
+<object name="TubeG_3" type="TubeG" static="false">
+<properties x="471" y="113" xsize="1.0" ysize="1.0" strict="true"/>
+<fields>
+<field name="l" type="double" value="2"/>
+<field name="d" type="double" value="0.019"/>
+<field name="K" type="double" value="2.1E11"/>
+<field name="s" type="double" value="0.003"/>
+<field name="epsap" type="double" value="0.1"/>
+<field name="epsr" type="double" value="1.0E-8"/>
+<field name="nc" type="double" value="7"/>
+<field name="kr" type="double" value="1.5"/>
+<field name="initQ1" type="double" value="1.0E-4"/>
+<field name="initp2e" type="double" value="4.88E6"/>
+</fields>
+</object>
+<object name="TubeG_4" type="TubeG" static="false">
+<properties x="611" y="113" xsize="1.0" ysize="1.0" strict="true"/>
+<fields>
+<field name="l" type="double" value="2"/>
+<field name="d" type="double" value="0.019"/>
+<field name="K" type="double" value="2.1E11"/>
+<field name="s" type="double" value="0.003"/>
+<field name="epsap" type="double" value="0.1"/>
+<field name="epsr" type="double" value="1.0E-8"/>
+<field name="nc" type="double" value="7"/>
+<field name="kr" type="double" value="1.5"/>
+<field name="initQ1" type="double" value="1.0E-4"/>
+<field name="initp2e" type="double" value="4.85E6"/>
+</fields>
+</object>
+<object name="TubeG_5" type="TubeG" static="false">
+<properties x="751" y="113" xsize="1.0" ysize="1.0" strict="true"/>
+<fields>
+<field name="l" type="double" value="2"/>
+<field name="d" type="double" value="0.019"/>
+<field name="K" type="double" value="2.1E11"/>
+<field name="s" type="double" value="0.003"/>
+<field name="epsap" type="double" value="0.1"/>
+<field name="epsr" type="double" value="1.0E-8"/>
+<field name="nc" type="double" value="7"/>
+<field name="kr" type="double" value="1.5"/>
+<field name="initQ1" type="double" value="1.0E-4"/>
+<field name="initp2e" type="double" value="4.82E6"/>
+</fields>
+</object>
+<object name="TubeG_6" type="TubeG" static="false">
+<properties x="891" y="113" xsize="1.0" ysize="1.0" strict="true"/>
+<fields>
+<field name="l" type="double" value="2"/>
+<field name="d" type="double" value="0.019"/>
+<field name="K" type="double" value="2.1E11"/>
+<field name="s" type="double" value="0.003"/>
+<field name="epsap" type="double" value="0.1"/>
+<field name="epsr" type="double" value="1.0E-8"/>
+<field name="nc" type="double" value="7"/>
+<field name="kr" type="double" value="1.5"/>
+<field name="initQ1" type="double" value="1.0E-4"/>
+<field name="initp2e" type="double" value="4.79E6"/>
+</fields>
+</object>
+<object name="Clock_0" type="Clock" static="false">
+<properties x="505" y="342" xsize="1.0" ysize="1.0" strict="true"/>
+<fields/>
+</object>
+<object name="Source_dyn_0" type="Source_dyn" static="false">
+<properties x="84" y="296" xsize="1.0" ysize="1.0" strict="true"/>
+<fields>
+<field name="type_con" type="boolean"/>
+<field name="type_ste" type="boolean" value="true"/>
+<field name="type_jum" type="boolean"/>
+<field name="type_osc" type="boolean"/>
+<field name="type_ram" type="boolean"/>
+<field name="mean" type="double" value="5E6"/>
+<field name="step" type="double" value="1E6"/>
+<field name="tmin" type="double" value="0.005"/>
+<field name="slope" type="double"/>
+<field name="height" type="double"/>
+<field name="dtjum" type="double"/>
+<field name="omega" type="double"/>
+<field name="fi" type="double"/>
+<field name="ampl" type="double"/>
+<field name="maxampl" type="double"/>
+</fields>
+</object>
+<object name="Source_dyn_1" type="Source_dyn" static="false">
+<properties x="924" y="323" xsize="1.0" ysize="1.0" strict="true"/>
+<fields>
+<field name="type_con" type="boolean" value="true"/>
+<field name="type_ste" type="boolean"/>
+<field name="type_jum" type="boolean"/>
+<field name="type_osc" type="boolean"/>
+<field name="type_ram" type="boolean"/>
+<field name="mean" type="double" value="1E-4"/>
+<field name="step" type="double" value="0"/>
+<field name="tmin" type="double" value="0.005"/>
+<field name="slope" type="double"/>
+<field name="height" type="double"/>
+<field name="dtjum" type="double"/>
+<field name="omega" type="double"/>
+<field name="fi" type="double"/>
+<field name="ampl" type="double"/>
+<field name="maxampl" type="double"/>
+</fields>
+</object>
+<object name="Process_dynamic_3D_1" type="Process_dynamic_3D" static="false">
+<properties x="31" y="16" xsize="1.0" ysize="1.0" strict="false"/>
+<fields>
+<field name="X_steps" type="double" value="3e4"/>
+<field name="Y_steps" type="double" value="1"/>
+<field name="dyn_stat_steps" type="double" value="0"/>
+<field name="tau" type="double" value="1e5"/>
+<field name="epsapi" type="double" value="0.001"/>
+<field name="epsri" type="double" value="0.001"/>
+<field name="numofcomps" type="double" value="2"/>
+<field name="maxiter" type="double" value="50"/>
+<field name="adjust" type="double" value="0.2"/>
+<field name="fluid_type" type="String" value="HLP46"/>
+<field name="fluid_temp" type="double" value="40"/>
+<field name="fluid_vol" type="double" value="0.02"/>
+<field name="fluid_ka" type="double" value="1"/>
+<field name="gr_red_rate" type="double" value="1"/>
+<field name="delAllGraphs" type="boolean" value="false"/>
+</fields>
+</object>
+<object name="MsGr_2" type="MsGr" static="true">
+<properties x="512" y="220" xsize="1.0" ysize="1.0" strict="false"/>
+<fields>
+<field name="domainName" type="String" value="Time, s"/>
+<field name="seriesNames" type="String[]" value="Pressure at the left port, Pa%%Volumetric flow at the left port, m3/s%%Pressure at the right port, Pa%%Volumetric flow at the right port, m3/s%%"/>
+<field name="repaintImmediately" type="boolean"/>
+<field name="lineThickness" type="float"/>
+<field name="axisAlwaysIncludeZero" type="boolean"/>
+<field name="showSeparateAxis" type="boolean"/>
+<field name="autoSort" type="boolean"/>
+<field name="allowDuplicates" type="boolean"/>
+</fields>
+</object>
+<connection obj1="TubeG_" port1="Q1" obj2="TubeG_0" port2="Q2" strict="false">
+<breakpoints/>
+</connection>
+<connection obj1="TubeG_" port1="p1" obj2="TubeG_0" port2="p2e" strict="false">
+<breakpoints/>
+</connection>
+<connection obj1="TubeG_2" port1="Q1" obj2="TubeG_" port2="Q2" strict="false">
+<breakpoints/>
+</connection>
+<connection obj1="TubeG_2" port1="p1" obj2="TubeG_" port2="p2e" strict="false">
+<breakpoints/>
+</connection>
+<connection obj1="TubeG_3" port1="Q1" obj2="TubeG_2" port2="Q2" strict="false">
+<breakpoints/>
+</connection>
+<connection obj1="TubeG_3" port1="p1" obj2="TubeG_2" port2="p2e" strict="false">
+<breakpoints/>
+</connection>
+<connection obj1="TubeG_4" port1="Q1" obj2="TubeG_3" port2="Q2" strict="false">
+<breakpoints/>
+</connection>
+<connection obj1="TubeG_4" port1="p1" obj2="TubeG_3" port2="p2e" strict="false">
+<breakpoints/>
+</connection>
+<connection obj1="TubeG_5" port1="Q1" obj2="TubeG_4" port2="Q2" strict="false">
+<breakpoints/>
+</connection>
+<connection obj1="TubeG_5" port1="p1" obj2="TubeG_4" port2="p2e" strict="false">
+<breakpoints/>
+</connection>
+<connection obj1="TubeG_6" port1="Q1" obj2="TubeG_5" port2="Q2" strict="false">
+<breakpoints/>
+</connection>
+<connection obj1="TubeG_6" port1="p1" obj2="TubeG_5" port2="p2e" strict="false">
+<breakpoints/>
+</connection>
+<connection obj1="Source_dyn_0" port1="out" obj2="TubeG_0" port2="p1" strict="false">
+<breakpoints>
+<point x="128" y="241"/>
+<point x="59" y="241"/>
+</breakpoints>
+</connection>
+<connection obj1="Source_dyn_1" port1="out" obj2="TubeG_6" port2="Q2" strict="false">
+<breakpoints>
+<point x="968" y="269"/>
+<point x="1064" y="269"/>
+<point x="1064" y="136"/>
+</breakpoints>
+</connection>
+<connection obj1="Clock_0" port1="out" obj2="Source_dyn_1" port2="in" strict="false">
+<breakpoints>
+<point x="555" y="331"/>
+<point x="644" y="331"/>
+<point x="644" y="434"/>
+<point x="968" y="434"/>
+</breakpoints>
+</connection>
+<connection obj1="Source_dyn_0" port1="in" obj2="Clock_0" port2="out" strict="false">
+<breakpoints>
+<point x="128" y="434"/>
+<point x="464" y="434"/>
+<point x="464" y="317"/>
+<point x="555" y="317"/>
+</breakpoints>
+</connection>
+<connection obj1="MsGr_2" port1="x" obj2="Clock_0" port2="out" strict="false">
+<breakpoints/>
+</connection>
+<connection obj1="TubeG_0" port1="p1" obj2="MsGr_2" port2="ys" strict="false">
+<breakpoints>
+<point x="59" y="241"/>
+<point x="465" y="241"/>
+</breakpoints>
+</connection>
+<connection obj1="TubeG_0" port1="Q1" obj2="MsGr_2" port2="ys" strict="false">
+<breakpoints>
+<point x="31" y="136"/>
+<point x="31" y="269"/>
+</breakpoints>
+</connection>
+<connection obj1="TubeG_6" port1="p2e" obj2="MsGr_2" port2="ys" strict="false">
+<breakpoints>
+<point x="1039" y="241"/>
+<point x="571" y="241"/>
+</breakpoints>
+</connection>
+<connection obj1="TubeG_6" port1="Q2" obj2="MsGr_2" port2="ys" strict="false">
+<breakpoints>
+<point x="1064" y="136"/>
+<point x="1064" y="269"/>
+</breakpoints>
+</connection>
+</scheme>

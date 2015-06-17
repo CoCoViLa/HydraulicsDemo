@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE scheme SYSTEM "scheme.dtd">
+<scheme package="HydraulicElementsDemo_1.0" superclass="Process_dynamic_3D_3">
+<object name="TubeG_0" type="TubeG" static="false">
+<properties x="220" y="248" xsize="1.0" ysize="1.0" strict="true"/>
+<fields>
+<field name="l" type="double" value="2"/>
+<field name="d" type="double" value="0.019"/>
+<field name="K" type="double" value="2.1E11"/>
+<field name="s" type="double" value="0.003"/>
+<field name="epsap" type="double" value="1.0"/>
+<field name="epsr" type="double" value="1E-6"/>
+<field name="nc" type="double" value="1"/>
+<field name="kr" type="double" value="1.5"/>
+<field name="initQ1" type="double" value="1E-4"/>
+<field name="initp2e" type="double" value="4.9963E6"/>
+</fields>
+</object>
+<object name="ResG_0" type="ResG" static="false">
+<properties x="220" y="158" xsize="1.0" ysize="1.0" strict="true"/>
+<fields>
+<field name="res_type" type="String" value="RRa"/>
+<field name="l" type="double" value="0.002"/>
+<field name="d" type="double" value="0.002"/>
+<field name="dlt" type="double" value="5E-6"/>
+<field name="kE" type="double" value="2"/>
+<field name="mu" type="double" value="0.7"/>
+<field name="dltpN" type="double" value="2E5"/>
+<field name="QN" type="double" value="1E-4"/>
+<field name="A" type="double" value="1E-4"/>
+<field name="pmax" type="double" value="2.5E7"/>
+<field name="epsap" type="double" value="1"/>
+<field name="epsr" type="double" value="1.0E-6"/>
+<field name="initp2e" type="double" value="5E6"/>
+</fields>
+</object>
+<object name="Tug_0" type="Tug" static="false">
+<properties x="395" y="158" xsize="1.0" ysize="1.0" strict="true"/>
+<fields>
+<field name="l" type="double" value="0.4"/>
+<field name="d" type="double" value="0.05"/>
+<field name="K" type="double" value="2.1E11"/>
+<field name="s" type="double" value="0.003"/>
+<field name="kr" type="double" value="1.5"/>
+<field name="initQ1" type="double" value="0"/>
+<field name="initp2" type="double" value="5E6"/>
+</fields>
+</object>
+<object name="ResG_1" type="ResG" static="false">
+<properties x="500" y="248" xsize="1.0" ysize="1.0" strict="true"/>
+<fields>
+<field name="res_type" type="String" value="RRa"/>
+<field name="l" type="double" value="0.002"/>
+<field name="d" type="double" value="0.002"/>
+<field name="dlt" type="double" value="5E-6"/>
+<field name="kE" type="double" value="2"/>
+<field name="mu" type="double" value="0.7"/>
+<field name="dltpN" type="double" value="2E5"/>
+<field name="QN" type="double" value="1e-04"/>
+<field name="A" type="double" value="1E-4"/>
+<field name="pmax" type="double" value="2.5E7"/>
+<field name="epsap" type="double" value="1"/>
+<field name="epsr" type="double" value="1E-6"/>
+<field name="initp2e" type="double" value="4.9963E6"/>
+</fields>
+</object>
+<object name="Tug_1" type="Tug" static="false">
+<properties x="681" y="248" xsize="1.0" ysize="1.0" strict="true"/>
+<fields>
+<field name="l" type="double" value="0.4"/>
+<field name="d" type="double" value="0.05"/>
+<field name="K" type="double" value="2.1E11"/>
+<field name="s" type="double" value="0.003"/>
+<field name="kr" type="double" value="1.5"/>
+<field name="initQ1" type="double" value="0"/>
+<field name="initp2" type="double" value="4.9963E6"/>
+</fields>
+</object>
+<object name="Clock_0" type="Clock" static="false">
+<properties x="220" y="460" xsize="1.0" ysize="1.0" strict="true"/>
+<fields/>
+</object>
+<object name="Source_dyn_0" type="Source_dyn" static="false">
+<properties x="44" y="430" xsize="1.0" ysize="1.0" strict="true"/>
+<fields>
+<field name="type_con" type="boolean"/>
+<field name="type_ste" type="boolean"/>
+<field name="type_jum" type="boolean"/>
+<field name="type_osc" type="boolean" value="true"/>
+<field name="type_ram" type="boolean"/>
+<field name="mean" type="double" value="5E6"/>
+<field name="step" type="double" value="1E6"/>
+<field name="tmin" type="double" value="0.005"/>
+<field name="slope" type="double"/>
+<field name="height" type="double" value="2.0E-5"/>
+<field name="dtjum" type="double" value="5.0E-3"/>
+<field name="omega" type="double" value="12"/>
+<field name="fi" type="double" value="0"/>
+<field name="ampl" type="double" value="1e6"/>
+<field name="maxampl" type="double" value="2e6"/>
+</fields>
+</object>
+<object name="Source_dyn_1" type="Source_dyn" static="false">
+<properties x="917" y="430" xsize="1.0" ysize="1.0" strict="true"/>
+<fields>
+<field name="type_con" type="boolean" value="true"/>
+<field name="type_ste" type="boolean"/>
+<field name="type_jum" type="boolean"/>
+<field name="type_osc" type="boolean"/>
+<field name="type_ram" type="boolean"/>
+<field name="mean" type="double" value="1E-4"/>
+<field name="step" type="double" value="1E-5"/>
+<field name="tmin" type="double" value="0.01"/>
+<field name="slope" type="double"/>
+<field name="height" type="double"/>
+<field name="dtjum" type="double"/>
+<field name="omega" type="double"/>
+<field name="fi" type="double"/>
+<field name="ampl" type="double"/>
+<field name="maxampl" type="double"/>
+</fields>
+</object>
+<object name="TubeZ_0" type="TubeZ" static="false">
+<properties x="779" y="338" xsize="1.0" ysize="1.0" strict="true"/>
+<fields>
+<field name="l" type="double" value="0.4"/>
+<field name="d" type="double" value="0.1"/>
+<field name="K" type="double" value="2.1E11"/>
+<field name="s" type="double" value="0.003"/>
+<field name="nc" type="double" nature="input" value="1"/>
+<field name="kr" type="double" value="1.5"/>
+<field name="initp1e" type="double" value="4.7485E6"/>
+<field name="initQ3" type="double" value="1E-4"/>
+<field name="initp2e" type="double" value="4.7485E6"/>
+</fields>
+</object>
+<object name="ResY_0" type="ResY" static="false">
+<properties x="500" y="338" xsize="1.0" ysize="1.0" strict="true"/>
+<fields>
+<field name="res_type" type="String" value="RRd"/>
+<field name="l" type="double" value="0"/>
+<field name="d" type="double" value="0.0005"/>
+<field name="dlt" type="double" value="5E-6"/>
+<field name="kE" type="double" value="2"/>
+<field name="mu" type="double" value="0.7"/>
+<field name="dltpN" type="double" value="2E5"/>
+<field name="QN" type="double" value="1E-4"/>
+<field name="A" type="double" value="6E-6"/>
+<field name="initQ1" type="double" value="1E-4"/>
+</fields>
+</object>
+<object name="TubeH_0" type="TubeH" static="false">
+<properties x="639" y="338" xsize="1.0" ysize="1.0" strict="true"/>
+<fields>
+<field name="l" type="double" value="2"/>
+<field name="d" type="double" value="0.019"/>
+<field name="K" type="double" value="2.1E11"/>
+<field name="s" type="double" value="0.003"/>
+<field name="nc" type="double" value="1"/>
+<field name="kr" type="double" value="1.5"/>
+<field name="epsap" type="double" value="1"/>
+<field name="epsr" type="double" value="1E-8"/>
+<field name="initQ2" type="double" value="1E-4"/>
+<field name="initp1e" type="double" value="4.74E6"/>
+</fields>
+</object>
+<object name="Process_dynamic_3D_3" type="Process_dynamic_3D" static="false">
+<properties x="31" y="22" xsize="1.0" ysize="1.0" strict="false"/>
+<fields>
+<field name="X_steps" type="double" value="3E5"/>
+<field name="Y_steps" type="double" value="1"/>
+<field name="dyn_stat_steps" type="double" value="0"/>
+<field name="tau" type="double" value="1e6"/>
+<field name="epsapi" type="double" value="0.1"/>
+<field name="epsri" type="double" value="0.0001"/>
+<field name="numofcomps" type="double" value="2"/>
+<field name="maxiter" type="double" value="50"/>
+<field name="adjust" type="double" value="0.2"/>
+<field name="fluid_type" type="String" value="HLP46"/>
+<field name="fluid_temp" type="double" value="40"/>
+<field name="fluid_vol" type="double" value="0.02"/>
+<field name="fluid_ka" type="double" value="1.4"/>
+<field name="gr_red_rate" type="double" value="1"/>
+<field name="delAllGraphs" type="boolean" value="false"/>
+</fields>
+</object>
+<object name="IEH4_12_3_2" type="IEH4_12_3" static="false">
+<properties x="81" y="158" xsize="1.0" ysize="1.0" strict="true"/>
+<fields/>
+</object>
+<object name="IEH4_12_3_3" type="IEH4_12_3" static="false">
+<properties x="361" y="248" xsize="1.0" ysize="1.0" strict="true"/>
+<fields/>
+</object>
+<object name="MsGr_4" type="MsGr" static="true">
+<properties x="721" y="130" xsize="1.0" ysize="1.0" strict="false"/>
+<fields>
+<field name="domainName" type="String" value="Time, s"/>
+<field name="seriesNames" type="String[]" value="Volumetric flow of the left silencer, m3/s%%Pressure at the left silencer, Pa%%Volumetric flow of the right silencer, m3/s%%Pressure at the right silencer, Pa%%"/>
+<field name="repaintImmediately" type="boolean"/>
+<field name="lineThickness" type="float"/>
+<field name="axisAlwaysIncludeZero" type="boolean"/>
+<field name="showSeparateAxis" type="boolean"/>
+<field name="autoSort" type="boolean"/>
+<field name="allowDuplicates" type="boolean"/>
+</fields>
+</object>
+<object name="MsGr_5" type="MsGr" static="true">
+<properties x="945" y="138" xsize="1.0" ysize="1.0" strict="false"/>
+<fields>
+<field name="domainName" type="String" value="Time, s"/>
+<field name="seriesNames" type="String[]" value="Pressure at the left port, Pa%%Volumetric flow at the left port, m3/s%%Volumetric flow at the right port, m3/s%%Pressure at the right port, Pa%%"/>
+<field name="repaintImmediately" type="boolean"/>
+<field name="lineThickness" type="float"/>
+<field name="axisAlwaysIncludeZero" type="boolean"/>
+<field name="showSeparateAxis" type="boolean"/>
+<field name="autoSort" type="boolean"/>
+<field name="allowDuplicates" type="boolean"/>
+</fields>
+</object>
+<object name="MsGr_0" type="MsGr" static="true">
+<properties x="826" y="443" xsize="1.0" ysize="1.0" strict="false"/>
+<fields>
+<field name="domainName" type="String" value="Time, s"/>
+<field name="seriesNames" type="String[]" value="Input pressure of TubeH, Pa%%Output pressure of TubeH, Pa%%Input pressureat the left port of ResY, Pa%%"/>
+<field name="repaintImmediately" type="boolean"/>
+<field name="lineThickness" type="float"/>
+<field name="axisAlwaysIncludeZero" type="boolean"/>
+<field name="showSeparateAxis" type="boolean"/>
+<field name="autoSort" type="boolean"/>
+<field name="allowDuplicates" type="boolean"/>
+</fields>
+</object>
+<connection obj1="Tug_0" port1="Q1" obj2="ResG_0" port2="Q2" strict="false">
+<breakpoints/>
+</connection>
+<connection obj1="Tug_0" port1="p1" obj2="ResG_0" port2="p2e" strict="false">
+<breakpoints/>
+</connection>
+<connection obj1="Tug_1" port1="Q1" obj2="ResG_1" port2="Q2" strict="false">
+<breakpoints/>
+</connection>
+<connection obj1="Tug_1" port1="p1" obj2="ResG_1" port2="p2e" strict="false">
+<breakpoints/>
+</connection>
+<connection obj1="Source_dyn_0" port1="in" obj2="Clock_0" port2="out" strict="false">
+<breakpoints>
+<point x="88" y="554"/>
+<point x="193" y="554"/>
+<point x="193" y="421"/>
+<point x="270" y="421"/>
+</breakpoints>
+</connection>
+<connection obj1="Clock_0" port1="out" obj2="Source_dyn_1" port2="in" strict="false">
+<breakpoints>
+<point x="270" y="421"/>
+<point x="344" y="421"/>
+<point x="344" y="554"/>
+<point x="961" y="554"/>
+</breakpoints>
+</connection>
+<connection obj1="TubeZ_0" port1="Q2" obj2="Source_dyn_1" port2="out" strict="false">
+<breakpoints>
+<point x="961" y="361"/>
+</breakpoints>
+</connection>
+<connection obj1="TubeH_0" port1="Q1" obj2="ResY_0" port2="Q2" strict="false">
+<breakpoints/>
+</connection>
+<connection obj1="TubeH_0" port1="p1e" obj2="ResY_0" port2="p2" strict="false">
+<breakpoints/>
+</connection>
+<connection obj1="TubeH_0" port1="Q2" obj2="TubeZ_0" port2="Q1" strict="false">
+<breakpoints/>
+</connection>
+<connection obj1="TubeH_0" port1="p2" obj2="TubeZ_0" port2="p1e" strict="false">
+<breakpoints/>
+</connection>
+<connection obj1="IEH4_12_3_2" port1="Q2" obj2="ResG_0" port2="Q1" strict="true">
+<breakpoints/>
+</connection>
+<connection obj1="IEH4_12_3_2" port1="p2" obj2="ResG_0" port2="p1" strict="true">
+<breakpoints/>
+</connection>
+<connection obj1="IEH4_12_3_2" port1="Q3" obj2="TubeG_0" port2="Q1" strict="true">
+<breakpoints/>
+</connection>
+<connection obj1="IEH4_12_3_2" port1="p3" obj2="TubeG_0" port2="p1" strict="true">
+<breakpoints/>
+</connection>
+<connection obj1="IEH4_12_3_2" port1="p1" obj2="Source_dyn_0" port2="out" strict="false">
+<breakpoints/>
+</connection>
+<connection obj1="Clock_0" port1="out" obj2="MsGr_4" port2="x" strict="false">
+<breakpoints>
+<point x="270" y="421"/>
+<point x="344" y="421"/>
+<point x="344" y="554"/>
+<point x="1049" y="554"/>
+<point x="1049" y="271"/>
+<point x="988" y="271"/>
+<point x="988" y="239"/>
+<point x="764" y="239"/>
+</breakpoints>
+</connection>
+<connection obj1="Clock_0" port1="out" obj2="MsGr_5" port2="x" strict="false">
+<breakpoints>
+<point x="270" y="421"/>
+<point x="344" y="421"/>
+<point x="344" y="554"/>
+<point x="1049" y="554"/>
+<point x="1049" y="271"/>
+<point x="988" y="271"/>
+</breakpoints>
+</connection>
+<connection obj1="Tug_0" port1="Q1" obj2="MsGr_4" port2="ys" strict="false">
+<breakpoints>
+<point x="403" y="154"/>
+<point x="667" y="155"/>
+</breakpoints>
+</connection>
+<connection obj1="ResG_0" port1="p2e" obj2="MsGr_4" port2="ys" strict="false">
+<breakpoints>
+<point x="383" y="226"/>
+<point x="383" y="129"/>
+<point x="691" y="130"/>
+</breakpoints>
+</connection>
+<connection obj1="Tug_1" port1="Q1" obj2="MsGr_4" port2="ys" strict="false">
+<breakpoints>
+<point x="689" y="226"/>
+</breakpoints>
+</connection>
+<connection obj1="Tug_1" port1="p1" obj2="MsGr_4" port2="ys" strict="false">
+<breakpoints>
+<point x="668" y="316"/>
+<point x="668" y="198"/>
+</breakpoints>
+</connection>
+<connection obj1="IEH4_12_3_2" port1="p1" obj2="MsGr_5" port2="ys" strict="false">
+<breakpoints>
+<point x="65" y="226"/>
+<point x="66" y="91"/>
+<point x="885" y="91"/>
+</breakpoints>
+</connection>
+<connection obj1="TubeZ_0" port1="Q2" obj2="MsGr_5" port2="ys" strict="false">
+<breakpoints>
+<point x="927" y="225"/>
+</breakpoints>
+</connection>
+<connection obj1="IEH4_12_3_2" port1="Q1" obj2="MsGr_5" port2="ys" strict="false">
+<breakpoints>
+<point x="89" y="113"/>
+<point x="871" y="113"/>
+</breakpoints>
+</connection>
+<connection obj1="TubeZ_0" port1="p2e" obj2="MsGr_5" port2="ys" strict="false">
+<breakpoints>
+<point x="1004" y="406"/>
+<point x="1004" y="299"/>
+<point x="901" y="299"/>
+<point x="901" y="225"/>
+</breakpoints>
+</connection>
+<connection obj1="IEH4_12_3_3" port1="Q1" obj2="TubeG_0" port2="Q2" strict="true">
+<breakpoints/>
+</connection>
+<connection obj1="IEH4_12_3_3" port1="Q2" obj2="ResG_1" port2="Q1" strict="true">
+<breakpoints/>
+</connection>
+<connection obj1="IEH4_12_3_3" port1="p1" obj2="TubeG_0" port2="p2e" strict="true">
+<breakpoints/>
+</connection>
+<connection obj1="IEH4_12_3_3" port1="p2" obj2="ResG_1" port2="p1" strict="true">
+<breakpoints/>
+</connection>
+<connection obj1="IEH4_12_3_3" port1="Q3" obj2="ResY_0" port2="Q1" strict="true">
+<breakpoints/>
+</connection>
+<connection obj1="IEH4_12_3_3" port1="p3" obj2="ResY_0" port2="p1" strict="true">
+<breakpoints/>
+</connection>
+<connection obj1="Clock_0" port1="out" obj2="MsGr_0" port2="x" strict="false">
+<breakpoints>
+<point x="270" y="421"/>
+<point x="344" y="421"/>
+<point x="344" y="554"/>
+<point x="869" y="554"/>
+</breakpoints>
+</connection>
+<connection obj1="TubeH_0" port1="p2" obj2="MsGr_0" port2="ys" strict="false">
+<breakpoints/>
+</connection>
+<connection obj1="TubeH_0" port1="p1e" obj2="MsGr_0" port2="ys" strict="false">
+<breakpoints>
+<point x="648" y="492"/>
+</breakpoints>
+</connection>
+<connection obj1="IEH4_12_3_3" port1="p3" obj2="MsGr_0" port2="ys" strict="false">
+<breakpoints>
+<point x="508" y="526"/>
+<point x="797" y="526"/>
+</breakpoints>
+</connection>
+</scheme>
